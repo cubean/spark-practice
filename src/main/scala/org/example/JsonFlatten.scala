@@ -38,8 +38,8 @@ object JsonFlatten {
     df
   }
 
-  def getCount(spark: SparkSession): DataFrame = {
-    val df = spark.read.option("multiline","true").json("data/example1.json").cache()
+  def flatten(spark: SparkSession): DataFrame = {
+    val df = spark.read.option("multiline","true").json("data/example.json").cache()
     val dfFlatten = flattenDF(df)
     dfFlatten.show(false)
     println(s"Lines: ${dfFlatten.count()}")

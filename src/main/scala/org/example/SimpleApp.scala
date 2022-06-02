@@ -6,7 +6,7 @@ object SimpleApp {
   def main(args: Array[String]): Unit = {
 
     val spark = SparkSession.builder.appName("Simple Application").getOrCreate()
-    Counting.getCount(spark)
+    JsonFlatten.flatten(spark)
     spark.stop()
   }
 }
