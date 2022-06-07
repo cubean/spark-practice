@@ -10,25 +10,29 @@
           "name": "Play Framework"
         },
         {
+          "name": "Akka Framework",
           "id": 2,
-          "name": "Akka Framework"
+          "status": null
         }
       ]
     }
   },
     {
       "tag": {
-        "id": 2,
         "name": "java",
+        "id": 2,
         "author": "James Gosling",
         "frameworks": [
           {
-            "id": 1,
-            "name": "Apache Tomcat"
+            "id": 2,
+            "name": "Spring Boot",
+            "status": null,
+            "timeStamp": "2022-05-22T12:17:34.444Z"
           },
           {
-            "id": 2,
-            "name": "Spring Boot"
+            "id": 1,
+            "name": "Apache Tomcat",
+            "value": "Up"
           }
         ]
       }

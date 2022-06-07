@@ -24,7 +24,7 @@ object JsonFlatten {
         case sType: StructType =>
           val childFieldNames = sType.fieldNames.map(childName => fieldName + "." + childName)
           val newFieldNames = fieldNames.filter(_ != fieldName) ++ childFieldNames
-          val renamedCols = newFieldNames.map(x => col(x.toString()).as(x.toString().replace(
+          val renamedCols = newFieldNames.map(x => col(x.toString).as(x.toString.replace(
             ".", "_").replace(
             "$", "_").replace(
             "__", "_").replace(
@@ -39,7 +39,7 @@ object JsonFlatten {
   }
 
   def flatten(spark: SparkSession): DataFrame = {
-    val df = spark.read.option("multiline","true").json("data/example.json").cache()
+    val df = spark.read.option("multiline","true").json("/tmp/shs_4.json").cache()
     val dfFlatten = flattenDF(df)
     dfFlatten.show(false)
     println(s"Lines: ${dfFlatten.count()}")
